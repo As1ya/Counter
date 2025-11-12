@@ -25,13 +25,13 @@ final class CounterViewController: UIViewController {
     private var isFirstAction = true
     private var number: Int = 0
     
-    @IBAction func increaseNumber(_ sender: Any) {
+    @IBAction private func increaseNumber(_ sender: Any) {
         number += 1
         numberLabel.text = String(number)
         addHistoryEntry("значение изменено на +1")
     }
     
-    @IBAction func decreaseNumber(_ sender: Any) {
+    @IBAction private func decreaseNumber(_ sender: Any) {
         if number > 0 {
             number -= 1
             numberLabel.text = String(number)
@@ -41,7 +41,7 @@ final class CounterViewController: UIViewController {
         }
     }
     
-    @IBAction func resetNumber(_ sender: Any) {
+    @IBAction private func resetNumber(_ sender: Any) {
         number = 0
         numberLabel.text = "0"
         addHistoryEntry("значение сброшено")
